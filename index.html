@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomorska 36</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Nasza Oferta</h1>
+    </header>
+
+    <nav class="main-nav">
+        <a href="#lokalizacja">Lokalizacja</a>
+        <a href="#rozkład">Rozkład</a>
+        <a href="#zdjęcia">Zdjęcia</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <section id="lokalizacja">
+        <h2>Lokalizacja</h2>
+        <div class="pdf-container">
+            <img src="Lokalizacja.jpg" class="content-img" loading="lazy">
+        </div>
+    </section>
+
+    <section id="rozkład">
+        <h2>Rozkład</h2>
+        <div class="pdf-container">
+            <img src="Rozkład.jpg" class="content-img" loading="lazy">
+        </div>
+    </section>
+
+    <section id="zdjęcia">
+        <h2>Zdjęcia</h2>
+        <div class="zdjęcia-grid">
+            <a href="#img1" class="span-2"><img src="DomOdStronyUlicy.jpg" loading="lazy"></a>
+            <a href="#img2"><img src="SalonNaParterze.jpg" loading="lazy"></a>
+            <a href="#img3"><img src="KuchniaNaParterze.jpg" loading="lazy"></a>
+            <a href="#img4" class="row-2"><img src="WidokNaTaras.jpg" loading="lazy"></a>
+            <a href="#img5"><img src="WidokNaTaras2.jpg" loading="lazy"></a>
+            <a href="#img6"><img src="ŁazienkaNaParterze.jpg" loading="lazy"></a>
+            <a href="#img7"><img src="OgródAlejka.jpg" loading="lazy"></a>
+            <a href="#img8"><img src="OgródPlacZabaw.jpg" loading="lazy"></a>
+            <a href="#img9"><img src="KącikGrilowy.jpg" loading="lazy"></a>
+            <a href="#img10"><img src="SalonNaPiętrze.jpg" loading="lazy"></a>
+            <a href="#img11"><img src="SypialniaNaPiętrze.jpg" loading="lazy"></a>
+            <a href="#img12"><img src="PrzykładowaSypialniaNaParterze.jpg" loading="lazy"></a>
+            <a href="#img13"><img src="PokójJednoosobowyNaPiętrze.jpg" loading="lazy"></a>
+        </div>
+
+        <!-- CSS Lightbox Overlays -->
+        <div id="img1" class="lightbox"><a href="#!" class="close">&times;</a><img src="DomOdStronyUlicy.jpg">
+        </div>
+        <div id="img2" class="lightbox"><a href="#!" class="close">&times;</a><img src="SalonNaParterze.jpg">
+        </div>
+        <div id="img3" class="lightbox"><a href="#!" class="close">&times;</a><img src="KuchniaNaParterze.jpg">
+        </div>
+        <div id="img4" class="lightbox"><a href="#!" class="close">&times;</a><img src="WidokNaTaras.jpg"></div>
+        <div id="img5" class="lightbox"><a href="#!" class="close">&times;</a><img src="WidokNaTaras2.jpg"></div>
+        <div id="img6" class="lightbox"><a href="#!" class="close">&times;</a><img src="ŁazienkaNaParterze.jpg">
+        </div>
+        <div id="img7" class="lightbox"><a href="#!" class="close">&times;</a><img src="OgródAlejka.jpg"></div>
+        <div id="img8" class="lightbox"><a href="#!" class="close">&times;</a><img src="OgródPlacZabaw.jpg"></div>
+        <div id="img9" class="lightbox"><a href="#!" class="close">&times;</a><img src="KącikGrilowy.jpg"></div>
+        <div id="img10" class="lightbox"><a href="#!" class="close">&times;</a><img src="SalonNaPiętrze.jpg">
+        </div>
+        <div id="img11" class="lightbox"><a href="#!" class="close">&times;</a><img src="SypialniaNaPiętrze.jpg">
+        </div>
+        <div id="img12" class="lightbox"><a href="#!" class="close">&times;</a><img
+                src="PrzykładowaSypialniaNaParterze.jpg"></div>
+        <div id="img13" class="lightbox"><a href="#!" class="close">&times;</a><img
+                src="PokójJednoosobowyNaPiętrze.jpg"></div>
+    </section>
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <div class="kontakt-container">
+            <div class="kontakt-card">
+                <h3>Zadzwoń do nas</h3>
+                <p>+48 604 762 385</p>
+                <button onclick="copyToClipboard('+48 604 762 385', this)" class="kontakt-btn">Kopiuj numer</button>
+            </div>
+            <div class="kontakt-card">
+                <h3>Napisz e-mail</h3>
+                <p id="email-text">wojtek.stankiewicz54@gmail.com</p>
+                <button onclick="copyToClipboard('wojtek.stankiewicz54@gmail.com', this)" class="kontakt-btn">Kopiuj
+                    e-mail</button>
+            </div>
+            <div class="kontakt-card">
+                <h3>Lokalizacja</h3>
+                <p>ul. Pomorska 36, Gniewino</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=ul.+Pomorska+36,+Gniewino" target="_blank"
+                    class="kontakt-btn">Zobacz na mapie</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'Skopiowano!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Błąd kopiowania: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>
